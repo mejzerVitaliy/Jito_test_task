@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { HtmlInputSlice } from "../slices/HtmlInputSlice";
+import { isConvertBtnSlice } from "../slices/isConvertBtnSlice";
 
 export const store = configureStore({
     reducer: {
-        HTML: HtmlInputSlice.reducer
+        HTML: HtmlInputSlice.reducer,
+        ConvertBtn: isConvertBtnSlice.reducer
     }
 })
 
