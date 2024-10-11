@@ -4,7 +4,7 @@ export interface JSONTypes {
     children?: (JSONTypes | { text: string })[];
 }
 
-export default function htmlToJson (html: string): JSONTypes | string {
+export default function html2Json (html: string): JSONTypes | string {
     const domParsing = new DOMParser()
     const doc = domParsing.parseFromString(html, 'text/html');
 

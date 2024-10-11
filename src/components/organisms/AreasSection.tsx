@@ -3,7 +3,7 @@ import HtmlArea from '../molecules/HtmlArea'
 import JsonArea from '../molecules/JsonArea'
 import { RootState } from '../../store/store'
 import { useDispatch, useSelector } from 'react-redux'
-import htmlToJson, { JSONTypes } from '../../utils/html2json'
+import html2Json, { JSONTypes } from '../../utils/html2json'
 import ToConvertedBtn from '../atoms/ToConvertedBtn'
 import { toggleIsConvertBtn } from '../../slices/isConvertBtnSlice'
 
@@ -14,13 +14,13 @@ const AreasSection = () => {
     const [prettyJson, setPrettyJson] = useState<string | null>(null)
     
     const toggleConvertHtml = () => {
-        setJson(htmlToJson(html))
-        setPrettyJson(JSON.stringify(json, null,  6))
+        setJson(html2Json(html))
+        setPrettyJson(JSON.stringify(json, null,  4))
     }
 
     useEffect(() => {
         if (html) {
-            setJson(htmlToJson(html))
+            setJson(html2Json(html))
         }
 
         if (html.length > 0) {
